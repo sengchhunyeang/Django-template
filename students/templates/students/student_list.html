@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{% url 'students:student_detail' student.id %}">{{ student.name }}</a>
+                - {{ student.class_name }}
+            </li>
+        {% empty %}
+            <li>No students yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
